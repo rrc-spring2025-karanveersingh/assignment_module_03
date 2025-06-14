@@ -33,4 +33,19 @@ for account_number in customer_account:
     customer_account[account_number] += balance * interest / 12
     pprint.pprint(customer_account) 
 
+# Storing the updated data
+
+new_file = "updated_balances_KG.csv"
+
+# Adding data in csv file
+with open(new_file, "w") as output_file:
+    output_file.write("Account,Balance\n")
+
+# using loop in csv file for adding data
+    for account_number, balance in customer_account.items():
+        output_file.write(f"{account_number},{balance}\n")
+
+    print(f"The file {new_file} created sucessfully|")
+
+
 
