@@ -1,7 +1,9 @@
 """Interest update program"""
-
+__author__ = "Karanveer Singh Gill"
+__version__ = "1.0.0"
 # Import statements
 import pprint
+import csv
 
 # declaring a variable to store customers account date
 customer_account = {}
@@ -47,5 +49,11 @@ with open(new_file, "w") as output_file:
 
     print(f"The file {new_file} created sucessfully|")
 
+# Printing the data by use of DictReader function
+with open("updated_balances_KG.csv", "r") as file:
+    reader = csv.DictReader(file)
+    for row in reader:
+        print(f"Account: {row["Account"]}, Balance: {row["Balance"]}")
+              
 
 
